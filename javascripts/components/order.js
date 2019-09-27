@@ -1,4 +1,5 @@
 import bread from './bread.js';
+import meat from './meat.js';
 import utilities from '../helpers/utilities.js';
 
 const createFinalOrder = (items) => {
@@ -6,16 +7,18 @@ const createFinalOrder = (items) => {
         <div class="card">
             <div class="card-body">
             <h5 class="card-title">Your Final Order</h5>
-            <div class="row d-flex justify-content-between"> 
             `;
     for (let i = 0; i < items.length; i++) {
         domString2 += `
+        <div class="row d-flex justify-content-between">
         <h6>${items[i].name}</h6>
         <h6>$${items[i].price}</h6>
+        <p>
+        </div>
         `;
     };
     domString2 += `
-        </div></div></div>`
+        </div></div>`
 
     utilities.printToDom('final-order', domString2);
 };
@@ -23,7 +26,9 @@ const createFinalOrder = (items) => {
 
 const creatOrderEvent = () => {
     const selectedBread = bread.getSelectedBread();
-    createFinalOrder(selectedBread);
+    const selectedMeat = meat.getSelectedMeat();
+    let totalIngredients = selectedBread.concat(selectedMeat);
+    createFinalOrder(totalIngredients);
 }
 
 const printOrderButton = () => {
