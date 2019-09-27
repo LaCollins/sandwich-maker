@@ -1,18 +1,29 @@
+import bread from './bread.js';
 import utilities from '../helpers/utilities.js';
 
-const creatOrderEvent = () => {
-    const domString = `
-    <div class="card" style="width: 18rem;">
-        <div class="card-body">
+const createFinalOrder = (items) => {
+    let domString2 = `
+        <div class="card">
+            <div class="card-body">
             <h5 class="card-title">Your Final Order</h5>
-            <div class="row d-flex justify-content-around"> 
-            <p>Ingredient</p>
-            <p>$price</p>
-            </div>
-        </div>
-    </div>
-    `;
-    utilities.printToDom('final-order', domString);
+            <div class="row d-flex justify-content-between"> 
+            `;
+    for (let i = 0; i < items.length; i++) {
+        domString2 += `
+        <h6>${items[i].name}</h6>
+        <h6>$${items[i].price}</h6>
+        `;
+    };
+    domString2 += `
+        </div></div></div>`
+
+    utilities.printToDom('final-order', domString2);
+};
+
+
+const creatOrderEvent = () => {
+    const selectedBread = bread.getSelectedBread();
+    createFinalOrder(selectedBread);
 }
 
 const printOrderButton = () => {
