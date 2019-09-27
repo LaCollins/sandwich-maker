@@ -1,17 +1,27 @@
+// import bread from './bread.js';
 import utilities from '../helpers/utilities.js';
 
+// const createFinalOrder = (items) => {
+//     let domString2 = `
+//         <div class="card">
+//             <div class="card-body">
+//             <h5 class="card-title">Your Final Order</h5>
+//             <div class="row d-flex justify-content-around"> 
+//             `;
+//     for (let i = 0; i < items.length; i++) {
+//         domString2 += `
+//         <h4>${items[i].name}</h4>
+//         <h4>$${items[i].price}</h4>
+//         `;
+//     };
+//     domString2 += `
+//         </div></div></div>`
+
+//     utilities.printToDom('final-order', domString2);
+// };
+
+
 const creatOrderEvent = () => {
-    const domString = `
-    <div class="card" style="width: 18rem;">
-        <div class="card-body">
-            <h5 class="card-title">Your Final Order</h5>
-            <div class="row d-flex justify-content-around"> 
-            <p>Ingredient</p>
-            <p>$price</p>
-            </div>
-        </div>
-    </div>
-    `;
     utilities.printToDom('final-order', domString);
 }
 
