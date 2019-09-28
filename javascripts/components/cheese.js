@@ -34,7 +34,7 @@ const getSelectedCheese = () => {
 }
 
 const printCheeseOptions = () => {
-    let domString = '';
+    let domString = '<h3>Cheese</h3>';
     for (let i = 0; i < cheeses.length; i++) {
         domString += `
         <div class="custom-control custom-switch">

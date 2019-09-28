@@ -35,7 +35,7 @@ const getSelectedMeat = () => {
 };
 
 const printMeatOptions = () => {
-    let domString = '';
+    let domString = '<h3>Meat</h3>';
     for (let i = 0; i < meats.length; i++) {
         domString += `
         <div class="custom-control custom-switch">

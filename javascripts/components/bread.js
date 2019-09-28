@@ -23,7 +23,7 @@ const getSelectedBread = () => {
 }
 
 const printBreadOptions = () => {
-    let domString = '';
+    let domString = '<h3>Bread</h3>';
     for (let i = 0; i < breads.length; i++) {
         domString += `
         <div class="form-check">
