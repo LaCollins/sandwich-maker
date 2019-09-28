@@ -8,7 +8,7 @@ import veggies from './veggies.js';
 const createFinalOrder = (items) => {
     let totalPrice = 0;
     let domString2 = `
-        <div class="card">
+        <div class="container" id="reciept">
             <div class="card-body">
             <h5 class="card-title">Your Final Order</h5>
             `;
@@ -33,7 +33,6 @@ const createFinalOrder = (items) => {
         <h6 class="col-6">${totalPrice}</h6>
         </div></div>
         `;
-
     utilities.printToDom('final-order', domString2);
 };
 
@@ -50,7 +49,7 @@ const creatOrderEvent = () => {
 
 const printOrderButton = () => {
     const domString = '<button type="button" id="order-button" class="btn btn-dark">Make Sammich</button>';
-    utilities.printToDom('final-order', domString);
+    utilities.printToDom('button-container', domString);
     document.getElementById('order-button').addEventListener('click', creatOrderEvent);
 };
 

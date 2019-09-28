@@ -1,3 +1,38 @@
 body {
-    background-color: #88fe88;
+    background: url("../assets/images/background.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+#ingredient-container, #reciept {
+    margin: 1em;
+}
+
+#ingredient-container {
+    background-color: rgba(255, 192, 203, 0.7);
+}
+
+#reciept {
+    border: dotted 4px black; 
+    background-color: white;
+}
+
+#sammichCar {
+    animation-duration: 5s;
+    animation-name: slidein;
+    animation-fill-mode: forwards;
+    opacity: 1;
+}
+
+@keyframes slidein {
+    from {
+        margin-left: 100%;
+        width: 200%; 
+      }
+    
+      to {
+        margin-left: 0%;
+        width: 70%;
+      }
 }
