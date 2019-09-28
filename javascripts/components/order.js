@@ -1,4 +1,5 @@
 import bread from './bread.js';
+import cheese from './cheese.js';
 import meat from './meat.js';
 import utilities from '../helpers/utilities.js';
 
@@ -9,10 +10,12 @@ const createFinalOrder = (items) => {
             <h5 class="card-title">Your Final Order</h5>
             `;
     for (let i = 0; i < items.length; i++) {
+        let price = items[i].price / 100;
+            price = price.toLocaleString('en-US', {style: "currency", currency: 'USD'});
         domString2 += `
         <div class="row d-flex justify-content-between">
-        <h6>${items[i].name}</h6>
-        <h6>$${items[i].price}</h6>
+        <h6 class="col-6">${items[i].name}</h6>
+        <h6 class="col-6">${price}</h6>
         <p>
         </div>
         `;
@@ -27,7 +30,8 @@ const createFinalOrder = (items) => {
 const creatOrderEvent = () => {
     const selectedBread = bread.getSelectedBread();
     const selectedMeat = meat.getSelectedMeat();
-    let totalIngredients = selectedBread.concat(selectedMeat);
+    const selectedCheese = cheese.getSelectedCheese();
+    let totalIngredients = selectedBread.concat(selectedMeat, selectedCheese);
     createFinalOrder(totalIngredients);
 }
 
