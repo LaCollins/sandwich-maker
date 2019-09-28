@@ -4,6 +4,7 @@
 Use this application to select sandwich ingredients and get a final cost for your sandwich creation.
 
 ## Screenshots
+![Sandwich Maker Preview](https://raw.githubusercontent.com/LaCollins/sandwich-maker/master/screenshots/screenshot1.PNG)
 
 ## How to run
 * Clone down this project
