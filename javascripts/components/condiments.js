@@ -11,7 +11,7 @@ const condiments = [
 
 const getSelectedCondiments = () => {
     const selectedCondiment = [];
-    const condimentCheckBoxes = document.getElementsByClassName('condiment');
+    const condimentCheckBoxes = document.getElementsByClassName('condiments');
     
     for (let j = 0; j < condimentCheckBoxes.length; j++) {
         if (condimentCheckBoxes[j].checked && condimentCheckBoxes[j].id === 'noCondiments') {
