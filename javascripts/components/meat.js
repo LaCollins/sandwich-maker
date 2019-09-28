@@ -5,8 +5,8 @@ const meats = [
     {id: 'meat2', name: 'Bacon', price: 90 },
     {id: 'meat3', name: 'Turkey', price: 100 }, 
     {id: 'meat4', name: 'Smoked Chicken', price: 75 },
-    {id: 'meat5', name: 'Pepperoni', price: 80 },
-    {id: 'meatNone', name: 'None', price: 0 }
+    {id: 'meat5', name: 'Pepperoni', price: 80 }
+    // {id: 'meatNone', name: 'None', price: 0 }
 ];
 
 const getSelectedMeat = () => {
@@ -14,12 +14,20 @@ const getSelectedMeat = () => {
     const meatCheckBoxes = document.getElementsByClassName('meat');
     
     for (let j = 0; j < meatCheckBoxes.length; j++) {
-        for (let k = 0; k < meats.length; k++) {
+        // if (meatCheckBoxes[j].checked && meatCheckBoxes[j].id ===  'meatNone') {
+        //         for (let l = 0; l < meatCheckBoxes.length; l++) {
+        //             meatCheckBoxes[l].checked = false;
+        //             document.getElementById('meatNone').checked = true;
+
+        //         }
+        //     } else {
+        for (let k = 0; k < meats.length; k++ ) {
             if (meatCheckBoxes[j].checked && meatCheckBoxes[j].id === meats[k].id) {
                 selectedMeat.push(meats[k]);
-            }
-        }
-    }
+            };
+        };   
+            // };
+        };
     return selectedMeat;
 }
 
