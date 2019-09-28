@@ -7,6 +7,7 @@ const meats = [
     {id: 'meat4', name: 'Smoked Chicken', price: 75 },
     {id: 'meat5', name: 'Pepperoni', price: 80 },
     {id: 'noMeat', name: 'No Meat', price: 0 }
+
 ];
 
 const getSelectedMeat = () => {
@@ -18,20 +19,20 @@ const getSelectedMeat = () => {
             for (let l = 0; l < meatCheckBoxes.length; l++) {
                 meatCheckBoxes[l].checked = false;
                 document.getElementById('noMeat').checked = true;
-            }
-        } 
-    }
+            };
+        };
+    };
     
     for (let m = 0; m < meatCheckBoxes.length; m++) {
             for (let k = 0; k < meats.length; k++) {
                 if (meatCheckBoxes[m].checked && meatCheckBoxes[m].id === meats[k].id) {
                     selectedMeat.push(meats[k]);
-                }
-             }
-        }
+                };
+             };
+        };
     
     return selectedMeat;
-}
+};
 
 const printMeatOptions = () => {
     let domString = '';
