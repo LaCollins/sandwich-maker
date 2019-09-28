@@ -6,12 +6,14 @@ import utilities from '../helpers/utilities.js';
 import veggies from './veggies.js';
 
 const createFinalOrder = (items) => {
+    let totalPrice = 0;
     let domString2 = `
         <div class="card">
             <div class="card-body">
             <h5 class="card-title">Your Final Order</h5>
             `;
     for (let i = 0; i < items.length; i++) {
+        totalPrice += items[i].price;
         let price = items[i].price / 100;
             price = price.toLocaleString('en-US', {style: "currency", currency: 'USD'});
         domString2 += `
@@ -22,8 +24,15 @@ const createFinalOrder = (items) => {
         </div>
         `;
     };
+    totalPrice = totalPrice / 100;
+    totalPrice = totalPrice.toLocaleString('en-US', {style: "currency", currency: 'USD'});
     domString2 += `
-        </div></div>`
+        <hr>
+        <div class="row d-flex justify-content-between">
+        <h6 class="col-6"><strong>Total</strong></h5>
+        <h6 class="col-6">${totalPrice}</h6>
+        </div></div>
+        `;
 
     utilities.printToDom('final-order', domString2);
 };
