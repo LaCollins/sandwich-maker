@@ -5,7 +5,7 @@ body {
     background-size: cover;
 }
 
-#ingredient-container, #reciept {
+#ingredient-container, #reciept, #button-container {
     margin: 1em;
 }
 
